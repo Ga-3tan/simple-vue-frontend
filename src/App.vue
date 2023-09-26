@@ -2,12 +2,12 @@
 export default {
   data() {
     return {
-      quote: "",
+      animal: "",
     }
   },
   methods: {
     async fetchQuote() {
-      this.quote = await fetch('http://localhost:3000').then(
+      this.animal = await fetch(import.meta.env.VITE_BACKEND_URL).then(
           res => res.text()
       ).catch(
           err => console.error(err)
@@ -18,6 +18,6 @@ export default {
 </script>
 
 <template>
-  <button @click="fetchQuote()">quote from backend</button>
-  <p>{{ quote }}</p>
+  <button @click="fetchQuote()">Get animal from backend</button>
+  <p>{{ animal }}</p>
 </template>
