@@ -20,5 +20,5 @@ export default {
 <template>
   <button @click="fetchQuote()">Get animal from backend</button>
   <p>{{ animal }}</p>
-  <img src="https://picsum.photos/seed/picsum/1280/720" alt="S3 image"/>
+  <img :src="import.meta.env.VITE_S3_IMAGE_URL" alt="S3 image"/>
 </template>
