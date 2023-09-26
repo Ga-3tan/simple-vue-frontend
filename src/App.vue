@@ -3,6 +3,7 @@ export default {
   data() {
     return {
       animal: "",
+      image_url:import.meta.env.VITE_S3_IMAGE_URL,
     }
   },
   methods: {
@@ -20,5 +21,5 @@ export default {
 <template>
   <button @click="fetchQuote()">Get animal from backend</button>
   <p>{{ animal }}</p>
-  <img :src="import.meta.env.VITE_S3_IMAGE_URL" alt="S3 image"/>
+  <img :src="image_url" alt="S3 image"/>
 </template>
